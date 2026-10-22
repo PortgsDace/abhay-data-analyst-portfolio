@@ -5,7 +5,7 @@ import {
   Phone, 
   FileText
 } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './SocialIcons';
+import { LinkedinIcon, GithubIcon, InstagramIcon } from './SocialIcons';
 import { profileData } from '../data/profileData';
 
 interface FooterProps {
@@ -99,6 +99,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
                 aria-label="GitHub"
               >
                 <GithubIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={profileData.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-[#E4405F] hover:bg-slate-700 transition-colors"
+                aria-label="Instagram"
+                title="Instagram (@abhay_thakur.r10)"
+              >
+                <InstagramIcon className="w-4 h-4" />
               </a>
               <button
                 onClick={onOpenResume}

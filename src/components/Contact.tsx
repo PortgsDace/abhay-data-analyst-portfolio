@@ -11,7 +11,7 @@ import {
   MapPin,
   Clock
 } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './SocialIcons';
+import { LinkedinIcon, GithubIcon, InstagramIcon } from './SocialIcons';
 import { profileData } from '../data/profileData';
 
 interface ContactProps {
@@ -155,7 +155,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
                   Social & Professional Profiles
                 </span>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <a
                     href={profileData.linkedin}
                     target="_blank"
@@ -180,6 +180,19 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       <span>GitHub</span>
                     </div>
                     <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-slate-900" />
+                  </a>
+
+                  <a
+                    href={profileData.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 hover:border-[#E4405F] text-slate-700 dark:text-slate-300 text-xs font-semibold transition-all group"
+                  >
+                    <div className="flex items-center gap-2">
+                      <InstagramIcon className="w-4 h-4 text-[#E4405F]" />
+                      <span>Instagram</span>
+                    </div>
+                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#E4405F]" />
                   </a>
                 </div>
               </div>

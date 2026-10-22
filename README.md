@@ -20,7 +20,7 @@ A modern, high-performance, responsive portfolio website built specifically for 
 - **Interactive SQL Sandbox**: Live in-browser SQL query runner and Power BI DAX simulator.
 - **Strict Integrity & QA Audit Table**: Complete transparency table auditing all repository links, companion repos, and internal case studies.
 - **ATS Resume Download & Preview**: Downloads the authentic `Abhay_Data_Analyst_Resume.pdf` and provides an in-browser printable ATS resume view.
-- **Verified Education**: B.Tech CSE (78.00%, CGPA: 7.25) and Senior Secondary Class XII (92.20%) — *10th matriculation omitted per user specification*.
+- **Verified Education**: B.Tech CSE (78.00%, CGPA: 7.45) and Senior Secondary Class XII (92.20%) — *10th matriculation omitted per user specification*.
 
 ---
 

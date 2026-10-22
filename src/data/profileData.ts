@@ -13,6 +13,8 @@ export const profileData = {
   phone: '+91 8628909240',
   linkedin: 'https://www.linkedin.com/in/abhay-thakur-22b7b63a8',
   github: 'https://github.com/PortgsDace',
+  instagram: 'https://www.instagram.com/abhay_thakur.r10',
+  instagramHandle: 'abhay_thakur.r10',
   existingPortfolio: 'https://portgsdace.github.io/Abhay-s-Portfolio',
   targetRoles: [
     'Data Analyst',
@@ -28,7 +30,7 @@ export const profileData = {
       institution: 'Government College Dharamshala, HPTU',
       period: '2022 – 2026',
       percentage: '78.00%',
-      cgpa: '7.25 / 10.0',
+      cgpa: '7.45 / 10.0',
       highlights: [
         'Core coursework: Database Management Systems, Data Structures & Algorithms, Object-Oriented Programming, Probability & Statistics.',
         'Final Year Capstone Project: VoteSetu — Decentralized Voting Application on Ethereum blockchain.',

@@ -11,7 +11,8 @@ import {
   Lightbulb, 
   TrendingUp, 
   FileText,
-  ArrowRight
+  ArrowRight,
+  Download
 } from 'lucide-react';
 import { Project } from '../types';
 
@@ -378,7 +379,18 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                         </span>
                       </div>
 
-                      {link.url.startsWith('http') ? (
+                      {link.type === 'download' ? (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          download
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white font-semibold text-xs transition-colors shrink-0 shadow-xs"
+                        >
+                          <Download className="w-3.5 h-3.5" />
+                          <span>Download Archive (.ZIP)</span>
+                        </a>
+                      ) : link.url.startsWith('http') ? (
                         <a
                           href={link.url}
                           target="_blank"

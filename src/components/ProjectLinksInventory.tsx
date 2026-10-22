@@ -2,7 +2,8 @@ import {
   CheckCircle2, 
   ExternalLink, 
   FileCheck, 
-  ShieldCheck 
+  ShieldCheck,
+  Download 
 } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { projectsData } from '../data/projectsData';
@@ -64,6 +65,7 @@ export const ProjectLinksInventory: React.FC = () => {
                 {projectsData.map((project, idx) => {
                   const hasCompanionRepo = project.links.some((l) => l.url.includes('github.com/PortgsDace/') && !l.url.endsWith('PortgsDace'));
                   const repoLink = project.links.find((l) => l.url.includes('github.com'));
+                  const downloadLink = project.links.find((l) => l.type === 'download');
 
                   return (
                     <tr key={project.id} className="hover:bg-white dark:hover:bg-slate-800/50 transition-colors">
@@ -90,23 +92,40 @@ export const ProjectLinksInventory: React.FC = () => {
                         </div>
                       </td>
                       <td className="px-5 py-4">
-                        {hasCompanionRepo ? (
-                          <a
-                            href={repoLink?.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold text-[11px] hover:underline"
-                          >
-                            <GithubIcon className="w-3.5 h-3.5" />
-                            <span>Verified Repo ({repoLink?.url.split('/').pop()})</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        ) : (
-                          <span className="inline-flex items-center gap-1 text-slate-500 text-[11px]">
-                            <FileCheck className="w-3.5 h-3.5 text-brand-500" />
-                            <span>Local Portfolio Scripts / Notebooks</span>
-                          </span>
-                        )}
+                        <div className="flex flex-col gap-1.5 items-start">
+                          {hasCompanionRepo && (
+                            <a
+                              href={repoLink?.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold text-[11px] hover:underline"
+                            >
+                              <GithubIcon className="w-3.5 h-3.5" />
+                              <span>Verified Repo ({repoLink?.url.split('/').pop()})</span>
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          )}
+                          {downloadLink && (
+                            <a
+                              href={downloadLink.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              download
+                              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 font-semibold text-[11px] hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors"
+                              title={downloadLink.notes || 'Download verified project archive (.zip)'}
+                            >
+                              <Download className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                              <span>Download Submission (.ZIP)</span>
+                              <ExternalLink className="w-3 h-3 text-teal-500" />
+                            </a>
+                          )}
+                          {!hasCompanionRepo && !downloadLink && (
+                            <span className="inline-flex items-center gap-1 text-slate-500 text-[11px]">
+                              <FileCheck className="w-3.5 h-3.5 text-brand-500" />
+                              <span>Local Portfolio Scripts / Notebooks</span>
+                            </span>
+                          )}
+                        </div>
                       </td>
                       <td className="px-5 py-4">
                         <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold">

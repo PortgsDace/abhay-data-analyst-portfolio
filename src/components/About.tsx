@@ -10,7 +10,7 @@ import {
   BarChart,
   Lightbulb
 } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './SocialIcons';
+import { LinkedinIcon, GithubIcon, InstagramIcon } from './SocialIcons';
 import { profileData } from '../data/profileData';
 
 export const About: React.FC = () => {
@@ -149,7 +149,7 @@ export const About: React.FC = () => {
                         Percentage: 78.00%
                       </span>
                       <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">
-                        (CGPA: 7.25)
+                        (CGPA: 7.45)
                       </span>
                     </div>
                   </div>
@@ -190,24 +190,33 @@ export const About: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 pt-1">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
                   <a
                     href={profileData.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-[#0A66C2] hover:text-white dark:hover:bg-[#0A66C2] text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors"
+                    className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-[#0A66C2] hover:text-white dark:hover:bg-[#0A66C2] text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors"
                   >
                     <LinkedinIcon className="w-3.5 h-3.5" />
-                    <span>LinkedIn Profile</span>
+                    <span>LinkedIn</span>
                   </a>
                   <a
                     href={profileData.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors"
+                    className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
-                    <span>GitHub Profile</span>
+                    <span>GitHub</span>
+                  </a>
+                  <a
+                    href={profileData.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-[#E4405F] hover:text-white dark:hover:bg-[#E4405F] text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors"
+                  >
+                    <InstagramIcon className="w-3.5 h-3.5" />
+                    <span>Instagram</span>
                   </a>
                 </div>
               </div>

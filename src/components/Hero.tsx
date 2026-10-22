@@ -6,9 +6,10 @@ import {
   TrendingUp, 
   CheckCircle2, 
   Sparkles,
-  ArrowUpRight
+  ArrowUpRight,
+  FileText
 } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './SocialIcons';
+import { LinkedinIcon, GithubIcon, InstagramIcon } from './SocialIcons';
 import { profileData } from '../data/profileData';
 
 interface HeroProps {
@@ -87,14 +88,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              {/* 2. Download My Resume */}
+              {/* 2. Interactive ATS Resume Preview */}
+              <button
+                onClick={onOpenResume}
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 text-slate-800 dark:text-slate-100 font-semibold text-sm shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500"
+                title="View interactive ATS-optimized resume"
+              >
+                <FileText className="w-4 h-4 text-brand-600 dark:text-brand-400" />
+                <span>View Resume</span>
+              </button>
+
+              {/* 3. Direct PDF Download */}
               <a
                 href="/Abhay_Data_Analyst_Resume.pdf"
                 download="Abhay_Data_Analyst_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 text-slate-800 dark:text-slate-100 font-semibold text-sm shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-850 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 font-semibold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-500"
+                title="Direct PDF Download"
               >
-                <Download className="w-4 h-4 text-brand-600 dark:text-brand-400" />
-                <span>Download My Resume</span>
+                <Download className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                <span>Download PDF</span>
               </a>
 
               {/* 3. Let's Connect */}
@@ -106,7 +118,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span>Let's Connect</span>
               </a>
 
-              {/* 4. LinkedIn and GitHub Icons */}
+              {/* 4. Social Profile Icons */}
               <div className="flex items-center gap-2 pl-1 border-l border-slate-200 dark:border-slate-800 ml-1">
                 <a
                   href={profileData.linkedin}
@@ -127,6 +139,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   title="View GitHub Profile"
                 >
                   <GithubIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={profileData.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-[#E4405F] dark:hover:text-[#f472b6] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/80 transition-colors"
+                  aria-label="Abhay's Instagram Profile"
+                  title="View Instagram (@abhay_thakur.r10)"
+                >
+                  <InstagramIcon className="w-4 h-4" />
                 </a>
               </div>
             </div>

@@ -11,7 +11,8 @@ import {
   Sheet, 
   Cpu, 
   ShieldCheck, 
-  Terminal 
+  Terminal,
+  Download 
 } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { projectsData } from '../data/projectsData';
@@ -191,6 +192,21 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     <FileText className="w-3.5 h-3.5" />
                     <span>View Case Study</span>
                   </button>
+
+                  {/* Direct Project Download Link (if available from resume submissions) */}
+                  {project.links.find((l) => l.type === 'download') && (
+                    <a
+                      href={project.links.find((l) => l.type === 'download')!.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                      className="p-2 rounded-lg bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/60 transition-colors"
+                      title={project.links.find((l) => l.type === 'download')!.label}
+                      aria-label="Download verified project archive (.zip)"
+                    >
+                      <Download className="w-4 h-4" />
+                    </a>
+                  )}
 
                   {/* External verified code button if exists */}
                   {project.links.find((l) => l.type === 'github' && l.url.includes('/fulfillment-hub')) ? (

@@ -19,7 +19,7 @@ export function App() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     const saved = localStorage.getItem('theme');
     if (saved) return saved === 'dark';
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return false; // Default to Light mode
   });
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);

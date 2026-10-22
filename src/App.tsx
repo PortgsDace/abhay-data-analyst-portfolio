@@ -17,9 +17,11 @@ import { projectsData } from './data/projectsData';
 
 export function App() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const saved = localStorage.getItem('theme');
+    // If the user has explicitly set 'light' or 'dark' in localStorage, check it.
+    // If it was previous default 'dark', reset to 'light'.
+    const saved = localStorage.getItem('theme_v2');
     if (saved) return saved === 'dark';
-    return false; // Default to Light mode
+    return false; // Always Light mode by default for all visitors
   });
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -30,10 +32,10 @@ export function App() {
     const root = document.documentElement;
     if (darkMode) {
       root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      localStorage.setItem('theme_v2', 'dark');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      localStorage.setItem('theme_v2', 'light');
     }
   }, [darkMode]);
 
